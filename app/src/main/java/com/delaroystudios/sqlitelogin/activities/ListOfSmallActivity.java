@@ -24,9 +24,16 @@ public class ListOfSmallActivity extends AppCompatActivity {
 
         ListView chl=(ListView) findViewById(R.id.chekable_list);
         chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        String[] items= {"xxxxxxxx", "yyyyyyyyy", "ggggggggggggg"};
+        int[] timehour= {11, 12, 13};
+        int[] timemin1= {0,0,0};
+        int[] timemin2= {0,0,0};
+        String[] items= {"Podnosimy szaliki!", "Fala!", "Klaszczemy!"};
+
+        String[] item= {timehour[0]+ ":" + timemin1[0]+ timemin2[0]+ " " + items[0] , timehour[1]+ ":" + timemin1[1]+ timemin2[1]+ " " + items[1], timehour[2]+ ":" + timemin1[2]+ timemin2[2]+ " " + items[2]    };
+
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, R.layout.list_of_activity_layout,
-                R.id.txt_lan, items);
+                R.id.txt_lan, item );
+
         chl.setAdapter(adapter);
 
         chl.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -46,7 +53,7 @@ public class ListOfSmallActivity extends AppCompatActivity {
     public void showSelectedItems(View view){
         String items="";
         for(String item:selectedItems){
-            items+="-"+item+"\n";
+            items+="-"+items+"\n";
         }
         Toast.makeText(this,"You have selected \n"+items, Toast.LENGTH_SHORT).show();
     }

@@ -28,7 +28,7 @@ public class Tab3 extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab3, container, false);
 
-        String[] menuItems= {"Do sth", "Do sth else", "Do another thing"};
+        String[] menuItems= {"Mecz 1", "Mecz 2", "Mecz 3"};
 
         ListView listView = (ListView) rootView.findViewById(R.id.mainMenu); //mainMenu in xml
 

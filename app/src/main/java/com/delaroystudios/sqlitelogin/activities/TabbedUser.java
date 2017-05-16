@@ -112,7 +112,7 @@ public class TabbedUser extends AppCompatActivity {
                     return tab1;
                 case 1:
                     Tab2 tab2= new Tab2();
-                    return tab2;
+                     return tab2;
                 case 2:
                     Tab3 tab3= new Tab3();
                     return tab3;
