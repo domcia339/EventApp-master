@@ -1,5 +1,6 @@
 package com.delaroystudios.sqlitelogin.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,8 +32,7 @@ public class ListOfSmallActivity extends AppCompatActivity {
 
         String[] item= {timehour[0]+ ":" + timemin1[0]+ timemin2[0]+ " " + items[0] , timehour[1]+ ":" + timemin1[1]+ timemin2[1]+ " " + items[1], timehour[2]+ ":" + timemin1[2]+ timemin2[2]+ " " + items[2]    };
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, R.layout.list_of_activity_layout,
-                R.id.txt_lan, item );
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,  R.layout.list_of_activity_layout, R.id.txt_lan, item );
 
         chl.setAdapter(adapter);
 
@@ -41,10 +41,11 @@ public class ListOfSmallActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 String selectedItem= ((TextView) view).getText().toString();
                 if(selectedItems.contains(selectedItem)){
-                    selectedItems.remove(selectedItem);  //uncheck item
+                   selectedItems.remove(selectedItem);  //uncheck item
                 }else{
                     selectedItems.add(selectedItem);
                 }
+                showSelectedItems(view);
             }
         });
 
@@ -52,9 +53,12 @@ public class ListOfSmallActivity extends AppCompatActivity {
 
     public void showSelectedItems(View view){
         String items="";
+        int nr=0;
+
         for(String item:selectedItems){
-            items+="-"+items+"\n";
+            //items+="-"+items+"\n";
+            nr+=1;
         }
-        Toast.makeText(this,"You have selected \n"+items, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"You have selected \n"+nr, Toast.LENGTH_SHORT).show();
     }
 }

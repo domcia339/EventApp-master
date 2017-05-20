@@ -52,8 +52,12 @@ public class Tab3 extends Fragment {
 
                 }else if (position==1){
                     Toast.makeText(getActivity(), "Second Item", Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    startActivity(intent);
                 }else if (position==2){
                     Toast.makeText(getActivity(), "Third Item", Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    startActivity(intent);
                 }
             }
 
