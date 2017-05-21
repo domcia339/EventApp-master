@@ -8,9 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.delaroystudios.sqlitelogin.model.User;
 
-/**
- * Created by delaroy on 3/27/17.
- */
+
 public class DatabaseHelper  extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
