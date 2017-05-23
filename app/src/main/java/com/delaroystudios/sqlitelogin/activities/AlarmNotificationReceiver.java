@@ -17,6 +17,8 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
 
     String en;
 
+    public Tables tables = new Tables();
+
     ListOfSmallActivity lo= new ListOfSmallActivity();
 
 
@@ -29,7 +31,7 @@ public class AlarmNotificationReceiver extends BroadcastReceiver {
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Alarm actived!")
-                .setContentText(lo.getEventName())
+                .setContentText(tables.mainTab[tables.postab3][tables.posList][2] )//tables.items[lo.pos])
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                 .setContentInfo("Info");
 

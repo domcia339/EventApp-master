@@ -21,10 +21,18 @@ import com.delaroystudios.sqlitelogin.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static java.lang.Integer.parseInt;
+
 public class ListOfSmallActivity extends AppCompatActivity {
 
     ArrayList<String> selectedItems=new ArrayList<>();
-    public String eventName;
+    public Tables  tables= new Tables();
+
+    public  Tab3 tab3= new Tab3();
+
+
+
+    public int pos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +41,12 @@ public class ListOfSmallActivity extends AppCompatActivity {
 
         ListView chl=(ListView) findViewById(R.id.chekable_list);
         chl.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        final int[] timehour= {16, 12, 13};
-        final int[] timemin1= {3,0,0};
-        final int[] timemin2= {1,0,0};
-        final String[] items= {"Podnosimy szaliki!", "Fala!", "Klaszczemy!"};
 
-        String[] item= {timehour[0]+ ":" + timemin1[0]+ timemin2[0]+ "   " + items[0] , timehour[1]+ ":" + timemin1[1]+ timemin2[1]+ " " + items[1], timehour[2]+ ":" + timemin1[2]+ timemin2[2]+ " " + items[2]    };
+       // String[] item= {tables.timehour[0]+ ":" + tables.timemin1[0]+ tables.timemin2[0]+ "   " + tables.items[0] , tables.timehour[1]+ ":" + tables.timemin1[1]+ tables.timemin2[1]+ " " + tables.items[1], tables.timehour[2]+ ":" + tables.timemin1[2]+ tables.timemin2[2]+ " " + tables.items[2]    };
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,  R.layout.list_of_activity_layout, R.id.txt_lan, item );
+        final String[] tab={tables.mainTab[tables.postab3][0][0] + ":" + tables.mainTab[tables.postab3][0][1] + "   " + tables.mainTab[tables.postab3][0][2], tables.mainTab[tables.postab3][1][0] + ":" + tables.mainTab[tables.postab3][1][1] + "   " + tables.mainTab[tables.postab3][1][2], tables.mainTab[tables.postab3][2][0] + ":" + tables.mainTab[tables.postab3][2][1] + "   " + tables.mainTab[tables.postab3][2][2] };
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,  R.layout.list_of_activity_layout, R.id.txt_lan, tab );
 
         chl.setAdapter(adapter);
 
@@ -56,13 +62,31 @@ public class ListOfSmallActivity extends AppCompatActivity {
                 showSelectedItems(view);
 
                 if(position==0){
-                    startAlarm(timehour[0], timemin1[0], timemin2[0], items[0]);
+                   // startAlarm(tables.timehour[0], tables.timemin1[0], tables.timemin2[0]);
+                    tables.posList=position;
+                    int a= Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][0]);
+                    int b=Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][1]);
+                   // tables.myEvent=  new String[]{a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]};
+                    tables.vector.add(a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]);
+                      Tab2 tab2= new Tab2();
+                     startAlarm( a , b);
+
                 }
                 if(position==1){
-                    showSelectedItems(view);
+                    tables.posList=position;
+                    int a= Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][0]);
+                    int b=Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][1]);
+                   // tables.myEvent= new String[]{a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]};
+                    tables.vector.add(a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]);
+                    startAlarm( a , b);
                 }
                 if(position==2){
-
+                    tables.posList=position;
+                    int a= Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][0]);
+                    int b=Integer.parseInt(tables.mainTab[tables.postab3][tables.posList][1]);
+                   //tables.myEvent= new String[]{a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]};
+                    tables.vector.add(a+":"+b+"  "+tables.mainTab[tables.postab3][tables.posList][2]);
+                    startAlarm( a , b);
                 }
             }
         });
@@ -80,17 +104,14 @@ public class ListOfSmallActivity extends AppCompatActivity {
         Toast.makeText(this,"You have selected \n"+nr, Toast.LENGTH_SHORT).show();
     }
 
-    public void startAlarm(int hour, int min1, int min2, String eventname){
+    public void startAlarm(int hour, int min){
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        //eventName=eventname;
-        setEventName(eventname);
-        getEventName();
 
         Calendar calendar = Calendar.getInstance();
 
         calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, min1*10+min2);
+        calendar.set(Calendar.MINUTE, min);
 
         Intent myIntent;
         PendingIntent pendingIntent;
@@ -104,13 +125,4 @@ public class ListOfSmallActivity extends AppCompatActivity {
         }
 
         }
-
-        public String getEventName(){
-            return eventName;
-        }
-
-        public void setEventName(String eventName){
-            this.eventName=eventName;
-        }
-
 }

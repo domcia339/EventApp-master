@@ -1,5 +1,6 @@
 package com.delaroystudios.sqlitelogin.activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -60,8 +61,10 @@ public class TabbedUser extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+              //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                     //   .setAction("Action", null).show();
+                Intent accountsIntent = new Intent(getApplicationContext(),TabbedUser.class);
+                startActivity(accountsIntent);
             }
         });
 
