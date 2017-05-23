@@ -112,6 +112,8 @@ public class ListOfSmallActivity extends AppCompatActivity {
 
         calendar.set(Calendar.HOUR_OF_DAY, hour);
         calendar.set(Calendar.MINUTE, min);
+        calendar.set(Calendar.DAY_OF_MONTH, 24);
+
 
         Intent myIntent;
         PendingIntent pendingIntent;

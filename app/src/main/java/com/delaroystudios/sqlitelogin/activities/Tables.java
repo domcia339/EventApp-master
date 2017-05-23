@@ -31,7 +31,7 @@ public class Tables {
         final int[] timemin2 = {1, 3, 0};
         final String[] items = {"Podnosimy szaliki!", "Fala!", "Klaszczemy!"};
 
-        final String[][][] mainTab= { { {"23", "40", "Szaliki!"}, {"18", "00","XXXXXX"}, {"19", "00","VVVVVV"} },
+        final String[][][] mainTab= { { {"00", "13", "Szaliki!"}, {"18", "00","XXXXXX"}, {"19", "00","VVVVVV"} },
                                       { {"12", "00", "AAAAAA"}, {"13", "00","BBBBB"}, {"14", "00","CCCC"} },
                                      { {"18", "00", "DDDDDDD"}, {"19", "00","EEEEEE"}, {"9", "40","FFFFFF"} }};
 
