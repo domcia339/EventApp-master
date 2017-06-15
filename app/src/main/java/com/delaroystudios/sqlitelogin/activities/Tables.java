@@ -26,13 +26,10 @@ public class Tables {
 
          final String[] menuItems= {"Mecz 1", "Mecz 2", "Mecz 3"};
 
-        final int[] timehour = {17, 8, 13};
-        final int[] timemin1 = {0, 3, 0};
-        final int[] timemin2 = {1, 3, 0};
         final String[] items = {"Podnosimy szaliki!", "Fala!", "Klaszczemy!"};
 
-        final String[][][] mainTab= { { {"00", "13", "Szaliki!"}, {"18", "00","XXXXXX"}, {"19", "00","VVVVVV"} },
-                                      { {"12", "00", "AAAAAA"}, {"13", "00","BBBBB"}, {"14", "00","CCCC"} },
+        final String[][][] mainTab= { { {"12", "00", "Szaliki!"}, {"12", "01","Fala!"}, {"12", "02","Klaszczemy!"} },
+                                      { {"15", "33", "AAAAAA"}, {"15", "30","BBBBB"}, {"16", "00","CCCC"} },
                                      { {"18", "00", "DDDDDDD"}, {"19", "00","EEEEEE"}, {"9", "40","FFFFFF"} }};
 
 }

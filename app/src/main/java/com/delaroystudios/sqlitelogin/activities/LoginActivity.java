@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 verifyFromSQLite();
                 break;
             case R.id.textViewLinkRegister:
-                Intent intentRegister = new Intent(getApplicationContext(),RegisterActivity.class);
+                Intent intentRegister = new Intent(getApplicationContext(), TabbedUser.class);  //RegisterActivity.class);
                 startActivity(intentRegister);
                 break;
         }
