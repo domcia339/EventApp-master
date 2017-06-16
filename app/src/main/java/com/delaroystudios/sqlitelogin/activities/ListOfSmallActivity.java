@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+//import static com.delaroystudios.sqlitelogin.activities.TabbedUser.tabb;
 import static java.lang.Integer.parseInt;
 
 public class ListOfSmallActivity extends AppCompatActivity {
@@ -125,12 +127,27 @@ public class ListOfSmallActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch(keyCode){
+            case KeyEvent.KEYCODE_BACK:
+                // do something here
+                finish();
+                Intent accountsIntent = new Intent(getApplicationContext(),TabbedUser.class);
+                startActivity(accountsIntent);
+                return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 
         public void startAlarm(int hour, int min, int postab3, int posList, int alarm_id) {
 
             AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
+
+           // tabb= new Tab2();
 
             tables.postab3 = postab3;
             tables.posList = posList;

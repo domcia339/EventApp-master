@@ -1,5 +1,6 @@
 package com.delaroystudios.sqlitelogin.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,7 +25,7 @@ public class Tab3 extends Fragment {
     }
 
     public Tables tables = new Tables();
-
+    TabbedUser tabbedUser =new TabbedUser();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,17 +51,20 @@ public class Tab3 extends Fragment {
                     tables.postab3=position;
                     Toast.makeText(getActivity(), "First Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
                     Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    getActivity().finish();
                     startActivity(intent);
 
                 }else if (position==1){
                     tables.postab3=position;
                     Toast.makeText(getActivity(), "Second Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
                     Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    getActivity().finish();
                     startActivity(intent);
                 }else if (position==2){
                     tables.postab3=position;
                     Toast.makeText(getActivity(), "Third Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
                     Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    getActivity().finish();
                     startActivity(intent);
                 }
             }

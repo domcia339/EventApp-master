@@ -6,12 +6,26 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.delaroystudios.sqlitelogin.activities.TabbedUser$PlaceholderFragment">
+    tools:context="com.delaroystudios.sqlitelogin.activities.TabbedUser$PlaceholderFragment"
+    >
 
     <TextView
-        android:id="@+id/section_label"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My account"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Aby korzystać z powiadomień aplikacji musisz potwierdzić swoją lokalizację."
+        android:textAppearance="@android:style/TextAppearance.Holo.Widget.ActionBar.Title"
+        android:visibility="visible" />
 
+    <Button
+        android:id="@+id/buttontab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sprawdź lokalizację"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

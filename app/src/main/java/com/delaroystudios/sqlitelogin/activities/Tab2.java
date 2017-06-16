@@ -17,6 +17,7 @@ import com.delaroystudios.sqlitelogin.R;
 public class Tab2 extends Fragment {
 
     public Tab2() {
+
     }
 
     public Tables tables = new Tables();

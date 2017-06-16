@@ -1,9 +1,9 @@
 package com.delaroystudios.sqlitelogin.activities;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -12,15 +12,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.TextView;
 
 import com.delaroystudios.sqlitelogin.R;
+
+import static com.delaroystudios.sqlitelogin.R.layout.tab2;
 
 public class TabbedUser extends AppCompatActivity {
 
@@ -33,6 +31,8 @@ public class TabbedUser extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+
+  // public static Tab2 tabb= new Tab2();
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -57,7 +57,7 @@ public class TabbedUser extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+     /*  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +66,7 @@ public class TabbedUser extends AppCompatActivity {
                 Intent accountsIntent = new Intent(getApplicationContext(),TabbedUser.class);
                 startActivity(accountsIntent);
             }
-        });
+        });*/
 
     }
 
@@ -94,6 +94,8 @@ public class TabbedUser extends AppCompatActivity {
     }
 
 
+
+
     //deleted PlaceholderFragment class from here --> by domcia339
 
     /**
@@ -111,17 +113,26 @@ public class TabbedUser extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
+
+                    //MapFragment mapFragment = new MapFragment();
+                    //return mapFragment;
+                   // FragmentManager manager = getSupportFragmentManager();
+                  // manager.beginTransaction().replace(R.id.mainLayout, mapFragment).commit();
                     Tab1 tab1= new Tab1();
                     return tab1;
                 case 1:
-                    Tab2 tab2= new Tab2();
-                     return tab2;
+
+                   Tab2 tab2= new Tab2();
+
+                    return tab2;
                 case 2:
                     Tab3 tab3= new Tab3();
                     return tab3;
             }
             return null;
         }
+
+
 
         @Override
         public int getCount() {
@@ -133,11 +144,11 @@ public class TabbedUser extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "My account";
+                    return "Lokalizacja";
                 case 1:
-                    return "My Events";
+                    return "Moje powiadomienia";
                 case 2:
-                    return "All events";
+                    return "Wydarzenia";
             }
             return null;
         }
